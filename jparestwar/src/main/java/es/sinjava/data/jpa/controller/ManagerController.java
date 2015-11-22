@@ -4,14 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryLinksResource;
 import org.springframework.hateoas.ResourceProcessor;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.sinjava.data.jpa.service.CityRepository;
 import es.sinjava.data.jpa.domain.City;
 import es.sinjava.data.jpa.domain.Counter;
+import es.sinjava.data.jpa.service.CityRepository;
 
 @RestController
 @RequestMapping("/customcity")

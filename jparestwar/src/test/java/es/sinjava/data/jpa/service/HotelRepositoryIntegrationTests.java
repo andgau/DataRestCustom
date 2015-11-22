@@ -15,28 +15,19 @@
  */
 package es.sinjava.data.jpa.service;
 
-import java.util.List;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import es.sinjava.data.jpa.SampleDataJpaApplication;
 import es.sinjava.data.jpa.domain.City;
-import es.sinjava.data.jpa.domain.Hotel;
-import es.sinjava.data.jpa.domain.HotelSummary;
-import es.sinjava.data.jpa.domain.Rating;
-import es.sinjava.data.jpa.domain.RatingCount;
-
-import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.hasSize;
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
 
 /**
  * Integration tests for {@link HotelRepository}.

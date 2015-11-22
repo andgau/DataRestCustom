@@ -15,6 +15,10 @@
  */
 package es.sinjava.data.jpa.service;
 
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +29,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import es.sinjava.data.jpa.SampleDataJpaApplication;
 import es.sinjava.data.jpa.domain.City;
-
-import static org.hamcrest.Matchers.greaterThan;
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
 
 /**
  * Integration tests for {@link CityRepository}.
