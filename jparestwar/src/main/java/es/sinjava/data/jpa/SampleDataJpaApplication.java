@@ -19,13 +19,8 @@ package es.sinjava.data.jpa;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
-import org.springframework.data.rest.webmvc.RepositoryLinksResource;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
-import org.springframework.hateoas.mvc.ControllerLinkBuilder;
-
-import es.sinjava.data.jpa.controller.ManagerController;
 
 @Import(RepositoryRestMvcConfiguration.class)
 @SpringBootApplication
