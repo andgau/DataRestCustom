@@ -14,13 +14,22 @@
  * limitations under the License.
  */
 
+/* Commment: andgau@gmail.com
+ * http://sinjava.blogspot.com
+ */
+
 package es.sinjava.data.jpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
+import org.springframework.data.rest.core.config.ProjectionDefinitionConfiguration;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguration;
+
+import es.sinjava.data.jpa.domain.City;
 
 @Import(RepositoryRestMvcConfiguration.class)
 @SpringBootApplication
@@ -29,5 +38,13 @@ public class SampleDataJpaApplication extends SpringBootServletInitializer {
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(SampleDataJpaApplication.class, args);
 	}
+
+	// utility bean, by default id isn't exposed
+	@Bean
+	ProjectionDefinitionConfiguration repositoryRestConfigurer(
+			RepositoryRestConfiguration config) {
+		config.exposeIdsFor(City.class);
+		return config.projectionConfiguration();
+	}
+
 }
-	

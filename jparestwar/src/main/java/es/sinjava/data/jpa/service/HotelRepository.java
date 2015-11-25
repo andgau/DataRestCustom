@@ -27,11 +27,12 @@ import es.sinjava.data.jpa.domain.Hotel;
 @RepositoryRestResource(collectionResourceRel = "hotel", path = "hotel")
 interface HotelRepository extends PagingAndSortingRepository<Hotel, Long> {
 
-	
-//	http://localhost:8080/hotel/search/findByName?name=Hilton Diagonal Mar
+	// Some examples
+	// http://localhost:8080/hotel/search/findByName?name=Hilton Diagonal Mar
 	Hotel findByName(@Param("name") String name);
-	
-//	http://localhost:8080/hotel/search/findByCityName?city=Barcelona
-	List<Hotel> findByCityName(@Param("city")String cityName);
+
+	// Some examples Hotel getCity getName (chained)
+	// http://localhost:8080/hotel/search/findByCityName?city=Barcelona
+	List<Hotel> findByCityName(@Param("city") String cityName);
 
 }

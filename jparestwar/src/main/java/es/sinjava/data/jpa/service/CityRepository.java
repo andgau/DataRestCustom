@@ -37,10 +37,12 @@ public interface CityRepository extends PagingAndSortingRepository<City, Long> {
 
 	City findByName(@Param("name") String name);
 	
+	// Some examples
 	// http://localhost:8080/city/search/findByCountry?country=Spain
 	// http://localhost:8080/city/search/findByCountry?country=Australia
 	List<City> findByCountry(@Param("country") String country);
-
+	
+	// Some examples of custom finders
 	// http://localhost:8080/city/search/findByCountryAllIgnoringCase?country=Australia&page=1&size=2&sort=name,desc
 	// http://localhost:8080/city/search/findByCountryAllIgnoringCase?country=Australia&page=0&size=2&sort=name
 	Page<City> findByCountryAllIgnoringCase(@Param("country") String country,

@@ -23,6 +23,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -30,6 +31,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.util.Assert;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Review implements Serializable {
@@ -40,7 +43,7 @@ public class Review implements Serializable {
 	@GeneratedValue
 	private Long id;
 
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = false, fetch=FetchType.EAGER  )
 	private Hotel hotel;
 
 	@Column(nullable = false)
@@ -52,6 +55,7 @@ public class Review implements Serializable {
 
 	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date checkInDate;
 
 	@Column(nullable = false)

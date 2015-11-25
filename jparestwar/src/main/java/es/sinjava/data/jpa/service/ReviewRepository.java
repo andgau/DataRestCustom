@@ -33,4 +33,10 @@ interface ReviewRepository extends PagingAndSortingRepository<Review, Long> {
 
 	Review findByHotelAndIndex(Hotel hotel, int index);
 
+	// Without a projection
+	// http://localhost:8080/review/1
+	// With ReviewDetailsProjection "simple"
+	// http://localhost:8080/review/1?projection=simple
+	
+	
 }
